@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Sustainable Video Compression</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle, #01252d 0%, #000000 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        header {
+            background-color: #000;
+            padding: 1em 5%;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            flex: 1;
+            text-align: center;
+        }
+
+        .nav-links li a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            padding: 0.5em;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover,
+        .nav-links li a.active {
+            color: #00ffff;
+        }
+
+        .contact-section {
+            max-width: 800px;
+            margin: 5em auto;
+            padding: 3em;
+            background-color: #111;
+            border-radius: 15px;
+            box-shadow: 0 0 20px #00ffff66;
+            text-align: center;
+        }
+
+        .contact-section h1 {
+            color: #00ffff;
+            font-size: 2.2em;
+            margin-bottom: 1em;
+        }
+
+        .contact-section p {
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
+        }
+
+        .contact-section a {
+            color: #00ffff;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0.5em 0;
+        }
+
+        .contact-section a:hover {
+            color: white;
+        }
+
+        footer {
+            background-color: #000;
+            color: #888;
+            text-align: center;
+            padding: 1.5em 5%;
+            font-size: 1em;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        footer p {
+            margin: 0.5em 1em;
+            flex: 1;
+            text-align: center;
+        }
+
+        footer a {
+            color: #888;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #00ffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/" class="{% if request.path == '/' %}active{% endif %}">HOME</a></li>
+                <li><a href="/upload" class="{% if request.path == '/upload' %}active{% endif %}">UPLOAD</a></li>
+                <li><a href="/about" class="{% if request.path == '/about' %}active{% endif %}">ABOUT</a></li>
+                <li><a href="/contact" class="{% if request.path == '/contact' %}active{% endif %}">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h1>CONTACT</h1>
+            <p>If you have any questions, feedback, or collaboration ideas, feel free to reach out using the details below.</p>
+            <p>Email: <a href="mailto:vanessa.addo@mail.bcu.ac.uk">vanessa.addo@mail.bcu.ac.uk</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/vanessa-addo-739591263/" target="_blank">Vanessa Addo on LinkedIn</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Birmingham City University</p>
+        <p>Vanessa Addo</p>
+        <p><a href="mailto:vanessa.addo@mail.bcu.ac.uk">vanessa.addo@mail.bcu.ac.uk</a></p>
+    </footer>
+</body>
+</html>
+

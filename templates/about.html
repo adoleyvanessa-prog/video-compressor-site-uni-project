@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Sustainable Video Compression</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/" class="{% if request.path == '/' %}active{% endif %}">HOME</a></li>
+                <li><a href="/upload" class="{% if request.path == '/upload' %}active{% endif %}">UPLOAD</a></li>
+                <li><a href="/about" class="{% if request.path == '/about' %}active{% endif %}">ABOUT</a></li>
+                <li><a href="/contact" class="{% if request.path == '/contact' %}active{% endif %}">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <h1>ABOUT THIS PROJECT</h1>
+            <p>
+                This website demonstrates the prototype focused on sustainability in digital media.
+                The goal is to provide an accessible platform for video compression that reduces file size and
+                energy consumption without compromising too much on quality.
+            </p>
+            <p>
+                Users can upload short videos and compress them using sustainable algorithms like H.264 and H.265,
+                with energy usage and compression stats presented after each task.
+                The platform is designed to support efficient testing, sharing, and demonstration of eco-friendly
+                compression techniques.
+            </p>
+            <p>
+                It is built with a user-friendly interface and uses a fixed power draw calculation to estimate energy
+                consumption, demonstrating how green computing can be practical, impactful, and accessible.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-row">
+            <p>Birmingham City University</p>
+            <p>Vanessa Addo</p>
+            <p><a href="mailto:vanessa.addo@mail.bcu.ac.uk">vanessa.addo@mail.bcu.ac.uk</a></p>
+        </div>
+    </footer>
+</body>
+</html>

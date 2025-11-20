@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload & Compress</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/" class="{% if request.path == '/' %}active{% endif %}">HOME</a></li>
+                <li><a href="/upload" class="{% if request.path == '/upload' %}active{% endif %}">UPLOAD</a></li>
+                <li><a href="/about" class="{% if request.path == '/about' %}active{% endif %}">ABOUT</a></li>
+                <li><a href="/contact" class="{% if request.path == '/contact' %}active{% endif %}">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <main>
+        <div class="upload-container">
+            <h1>UPLOAD VIDEO FOR COMPRESSION</h1>
+
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash-message">
+                    {% for message in messages %}
+                        <p>❌ {{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% endwith %}
+
+            {% if not success %}
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <label>Select video (max 3 minutes):</label>
+                <input type="file" name="video" accept="video/*" required>
+
+                <div class="recommend-box">
+                    <strong>Recommended for Best Balance:</strong><br>
+                    H.264 (libx264), CRF 30, Medium Preset<br>
+                    <small>Small file, good quality, low energy use</small>
+                </div>
+
+                <label>Select compression codec:</label>
+                <select name="codec">
+                    <option value="h264">H.264 (libx264)</option>
+                    <option value="h265" selected>H.265 (libx265)</option>
+                </select>
+
+                <label>CRF (Quality, 18=high, 30=low):</label>
+                <input type="number" name="crf" value="30" min="18" max="35">
+
+                <label>Preset (speed vs quality):</label>
+                <select name="preset">
+                    <option value="ultrafast">ultrafast</option>
+                    <option value="medium" selected>medium</option>
+                    <option value="slow">slow</option>
+                    <option value="veryslow">veryslow</option>
+                </select>
+
+                <button type="submit">UPLOAD & COMPRESS</button>
+            </form>
+            {% endif %}
+
+            {% if success %}
+            <div class="results">
+                <h2>Compression Complete!</h2>
+                <p><strong>Original Size:</strong> {{ original_size }} MB</p>
+                <p><strong>Compressed Size:</strong> {{ compressed_size }} MB</p>
+                <p><strong>Time Taken:</strong> {{ time_taken }} seconds</p>
+                <p><strong>Energy Used:</strong> {{ energy }} joules</p>
+
+                <div style="margin-top: 2em;">
+                    <a href="{{ url_for('download', filename=video) }}" class="download-btn">DOWNLOAD VIDEO</a>
+                </div>
+
+                <div class="return-container">
+                    <a href="/"><button class="return-btn">RETURN TO HOMEPAGE</button></a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </main>
+
+    <!-- SUBMIT BUTTON DISABLE SCRIPT -->
+    <script>
+        const form = document.querySelector('form');
+        const submitButton = form?.querySelector('button[type="submit"]');
+
+        if (form && submitButton) {
+            form.addEventListener('submit', function () {
+                submitButton.disabled = true;
+                submitButton.textContent = 'Compressing...';
+                submitButton.style.opacity = '0.7';
+            });
+        }
+    </script>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-row">
+            <p>Birmingham City University</p>
+            <p>Vanessa Addo</p>
+            <p><a href="mailto:vanessa.addo@mail.bcu.ac.uk">vanessa.addo@mail.bcu.ac.uk</a></p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
