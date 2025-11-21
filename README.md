@@ -30,6 +30,6 @@ It was created as part of a final-year dissertation on **sustainable video compr
 - **Templates:** Jinja2 (`templates/`)
 - **Video tools:** `ffmpeg`, `ffprobe` (command line)
 
-### 📌 Dissertation Poster (Preview)
+### Dissertation Poster
 ![Poster Preview](static/poster_converted.png)
 
