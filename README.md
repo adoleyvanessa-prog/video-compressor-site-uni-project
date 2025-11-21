@@ -56,6 +56,7 @@ This aligns with academic themes in my dissertation, including:
   - Estimated energy (joules)
 
 ## 1st Place Poster Design for Technical Clarity and Innovation
+*Read the ‘Results’ section to see my findings and the outcomes of the experimental approach.*
 ![Poster Preview](static/poster_converted.png)
 
 
