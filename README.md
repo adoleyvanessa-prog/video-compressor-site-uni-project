@@ -54,10 +54,9 @@ This aligns with academic themes in my dissertation, including:
   - Compressed size  
   - Time taken  
   - Estimated energy (joules)
-- **Download link** for the compressed video
-- **Automatic cleanup** of unused files
 
-![Poster Preview](images/poster_converted.png)
+## 1st Place Poster Design for Technical Clarity and Innovation
+![Poster Preview](static/poster_converted.png)
 
 
 
