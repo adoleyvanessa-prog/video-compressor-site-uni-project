@@ -27,10 +27,10 @@ This project was designed to:
 - Provide an approachable way for users to experiment with greener compression choices  
 
 This aligns with academic themes in my dissertation, including:  
-✔ Green computing  
-✔ Sustainable algorithms  
-✔ Energy consumption in digital media  
-✔ Compression optimisation techniques  
+- Green computing  
+- Sustainable algorithms  
+- Energy consumption in digital media  
+- Compression optimisation techniques  
 
 ---
 
